@@ -2,10 +2,10 @@ var express = require("express");
 var app = express();
 const port = 3000;
 
-const duplicateCount =  require("./kata/6kyu/CountingDuplicates");
+const sixKYU =  require("./kata/6kyu/sixKYU");
 
 app.get("/duplicate-count", (req, res) => {
-    var output = duplicateCount.duplicateCount('test');
+    var output = sixKYU.duplicateCount('test');
   res.send(output);
 });
 
