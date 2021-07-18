@@ -15,5 +15,5 @@ test("should ignore cases", () => {
 });
 
 test("should also work when letters are not adjacent", () => {
-  expect(duplicateCount("Christianity").toBe(2));
+  expect(duplicateCount("Christianity")).toBe(2);
 });
