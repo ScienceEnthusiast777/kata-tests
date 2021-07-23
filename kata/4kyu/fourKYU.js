@@ -53,4 +53,8 @@ snail = function (array, reorderedArray, cycleStarted) {
   }
 };
 
-module.exports = { snail, removeZeros };
+function topThreeWords(text) {
+}
+
+
+module.exports = { snail, removeZeros, topThreeWords };

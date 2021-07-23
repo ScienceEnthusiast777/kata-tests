@@ -1,6 +1,6 @@
 const fourKYU = require("../kata/4kyu/fourKYU");
 
-const { removeZeros, snail } = fourKYU;
+const { removeZeros, snail, topThreeWords } = fourKYU;
 
 test("zeroes are moved in correct position retaining their type", () => {
   expect(
@@ -48,3 +48,28 @@ test("returns a 2 dimensional array in order in a snail pattern", () => {
   ]);
 });
 
+test("Should return top three most occuring words in decending order and single characters work", () => {
+  expect(
+    topThreeWords("a a a b c c d d d d e e e e e e e e e e e e e ")
+  ).toStrictEqual(["e", "d", "a"]);
+});
+
+test("Should not be case sensitive and returned values should be lowercased", () => {
+  expect(topThreeWords("aAAA aaaa aAaA dd ccc ccC cCc ccc")).toStrictEqual([
+    "ccc",
+    "aaa",
+    "dd",
+  ]);
+});
+
+test("Should return empty array if no words are present", () => {
+  expect(topThreeWords("///")).toStrictEqual([]);
+});
+
+test("Should return all strings if less than 3 unique strings are present", () => {
+  expect(topThreeWords("aAAA aaaa ccc")).toStrictEqual(["ccc", "aaa"]);
+});
+
+test("Should ignore special characters apart from apostrophies", () => {
+  expect(topThreeWords("aAA'A aaa'a dd ccC //ccc ccc *****qQ Dd")).toStrictEqual(["ccc", "aaa'a", 'dd']);
+});
