@@ -57,7 +57,7 @@ test("Should return top three most occuring words in decending order and single 
 test("Should not be case sensitive and returned values should be lowercased", () => {
   expect(topThreeWords("aAAA aaaa aAaA dd ccc ccC cCc ccc")).toStrictEqual([
     "ccc",
-    "aaa",
+    "aaaa",
     "dd",
   ]);
 });
@@ -67,7 +67,7 @@ test("Should return empty array if no words are present", () => {
 });
 
 test("Should return all strings if less than 3 unique strings are present", () => {
-  expect(topThreeWords("aAAA aaaa ccc")).toStrictEqual(["ccc", "aaa"]);
+  expect(topThreeWords("aAAA aaaa ccc")).toStrictEqual(["aaaa", "ccc"]);
 });
 
 test("Should ignore special characters apart from apostrophies", () => {
