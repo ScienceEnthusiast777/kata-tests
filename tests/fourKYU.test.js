@@ -1,6 +1,6 @@
 const fourKYU = require("../kata/4kyu/fourKYU");
 
-const { removeZeros, snail, topThreeWords } = fourKYU;
+const { removeZeros, snail, topThreeWords, sumIntervals } = fourKYU;
 
 test("zeroes are moved in correct position retaining their type", () => {
   expect(
@@ -71,5 +71,25 @@ test("Should return all strings if less than 3 unique strings are present", () =
 });
 
 test("Should ignore special characters apart from apostrophies", () => {
-  expect(topThreeWords("aAA'A aaa'a dd ccC //ccc ccc *****qQ Dd")).toStrictEqual(["ccc", "aaa'a", 'dd']);
+  expect(
+    topThreeWords("aAA'A aaa'a dd ccC //ccc ccc *****qQ Dd")
+  ).toStrictEqual(["ccc", "aaa'a", "dd"]);
+});
+
+test("Should return the sum of an array of intervals", () => {
+  expect(
+    sumIntervals([
+      [1, 6],
+      [6, 20],
+    ])
+  ).toStrictEqual(19);
+});
+
+test("Should work correctly when intervals overlap", () => {
+  expect(
+    sumIntervals([
+      [1, 6],
+      [4, 10],
+    ])
+  ).toStrictEqual(9);
 });
